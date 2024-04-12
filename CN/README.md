@@ -75,3 +75,33 @@ There are steps which the browser performs before the site becomes fully interac
 After parsing DOM for HTML element document hierarchy and CSSDOM for the element design will be formed and after that both will be merged to form the render Tree.
 
 ![Rendering Process](rendringProcess.png)
+
+----
+----
+
+# Communication Protocols
+<pre>
+HTTP: HTTP stand's for hyper text transfer protocol, It is a foundational communication protocol of world wide web. It is stateless protocol, used for data transfer, downloading files from websites.
+- Many Mordern web application and API's uses HTTP methods such as GET, PUT, POST, DELETE
+
+HTTPS: It is extenstion of HTTP also called Secure HTTP that uses ssl certificate and TLS for trafic encryption.
+
+Web Sockets: extension of HTTP, used for realtime chat application, it becomes full duplex after first connection.
+-> Hard to scale
+
+SMTP -> simple mail transfer protocol. mail go through smtp server for mailing address location
+
+FTP: file transfer prtocol, used to transfer files. 
+</pre>
+## Transport Layer Protocol
+
+TCP: It is a protocol that works in transport layer, it gurantees the delivery of the packets 
+
+UDP: It is also works on transport layer. It is less reliable, best suited for where minor data loss doesnot make any difference example: video calling, VoIP, 
+  - It is faster
+  - Header compressing is used (also know ad HTTP/3)
+
+---
+---
+
+# REST 
