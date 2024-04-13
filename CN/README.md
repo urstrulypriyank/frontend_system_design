@@ -10,20 +10,20 @@ You don't need to know everything.
 
 ---
 
-### Networking: Interconnection of networking devices to communicate using some system.
+## Networking: Interconnection of networking devices to communicate using some system.
 
-### Internet: A network of networks.
+## Internet: A network of networks.
 - To move from one host to another, packet switching is used, and it hops on network devices like routers, switches, repeaters, etc.
 
 ---
 
-## Working Of Internet 🤔
+# Working Of Internet 🤔
 
 Ever wondered what happens when you visit google.com? At a high level, you visit a site and it displays a fully functional page.
 
 However, it's more than just a single request. When you visit dynamic sites like flipkart.com, many things happen in the background that can be observed in the network tab of the developer console of any browser.
 
-### DNS Overhead
+## DNS Overhead
 When you visit any site like flipkart.com, your query first goes to the local DNS server. If found, it returns the IP; otherwise, it gets the IP from the remote DNS server. This process of obtaining the IP from the remote DNS server is called DNS Overhead.
 
 - Our local machine can retrieve DNS from multiple locations in order:
@@ -79,7 +79,7 @@ After parsing DOM for HTML element document hierarchy and CSSDOM for the element
 ----
 ----
 
-## Communication Protocols
+# Communication Protocols
 <pre>
 HTTP: HTTP stand's for hyper text transfer protocol, It is a foundational communication protocol of world wide web. It is stateless protocol, used for data transfer, downloading files from websites.
 - Many Mordern web application and API's uses HTTP methods such as GET, PUT, POST, DELETE
@@ -93,7 +93,7 @@ SMTP -> simple mail transfer protocol. mail go through smtp server for mailing a
 
 FTP: file transfer prtocol, used to transfer files. 
 </pre>
-### Transport Layer Protocol
+## Transport Layer Protocol
 
 TCP: It is a protocol that works in transport layer, it gurantees the delivery of the packets 
 
@@ -101,60 +101,7 @@ UDP: It is also works on transport layer. It is less reliable, best suited for w
   - It is faster
   - Header compressing is used (also know ad HTTP/3)
 
+---
+---
 
-
-## REST API 
-|</t> <b> Topics </b> |
-|---|
-|What is REST API ?| 
-|Benifits & why REST API| 
-| Building Blocks (URL, METHODS, HEADERS, REQ,RES, STATUS CODE) |
-
-### Definition of REST 
-It stands for representational state transfer protocol,  In earlier times, there was only a monolithic architecture where the frontend and backend resides on the same machine, which limits the scalability.
-
-    In a 1-tier architecture, where the client and server are on the same machine, only horizontal scaling is possible, which has scalability limits.
-
-
-## What Problem Does REST Solve ? 
-It provide us the ability to seperate frontend and backend whcih gives birth to (2-tier architecture) 
-i.e client and server are on different machine.
-
-2/3 tier application are vertical as well as horizontal scalable with horizontal scaling have physical limit but vertical scaling doesn't.
-
-**REST provides a standardized format for data transfer and communication between the client and server.**
-
-**REST API =Representational state transfer Application programming interface,
-makes 2 different programming language talk to each other.**
-
-## Benifits of REST API
-- Ease of use (from client you can use fetch or axios from server)
-- stateless (every request treated as new request which provide freedom to query from any server from the cluster of servers) which ulitmaltely provide scalibilty.
-- Flexibility: independent of data exchange format like: JSON, xml ,yaml ...etc. 
-- Uniform interface: provide standard way to do the things like uri,params methods etc..
-- Beacuase of stateless beahaviour caching is possible
-- Helps in sepration of concern as the services can be independently hosted and used like (implementation of SSO single signon services). 
-- Language Agnostic: provide interoperability b/w the technologies.
-- Provides Security over HTTPS.
-
-## Building Blocks
-
-Requests
-There are standard way to send requests in REST.
-Request have 3 parts as shown in image below
-  1. HTTP Request Line
-  2. HTTP Header
-  3. HTTP Body 
-
-![Request ](Request.png)
-Respnose : 
- ![Response](Response.png)
-
-
- ---
- URL: 
-
-## Creating First Rest API
-We will use ExpressJS with node for creating first api
-
-
+# REST 
