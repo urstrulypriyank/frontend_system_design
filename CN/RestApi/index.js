@@ -1,5 +1,5 @@
 import express from "express"
-
+import bodyParser from "body-parser";
 const app = express();
 const PORT = 5111;
 
@@ -15,7 +15,7 @@ const DATA = [
         isCompleted: false,
 
     },
-     {
+    {
         titile: "Work 3",
         id: 2,
         isCompleted: false,
@@ -29,11 +29,24 @@ const DATA = [
     }
 ]
 
+
+// MIDDLEWARE
+app.use(bodyParser.json());
+
+
 // create 
+app.post('/todos', (req, res) => {
+    console.log('/todos with post has been called');
+    const todo = req.body;
+    console.log(todo);
+    DATA.push(todo);
+    res.status(201).send("Data added sucessfully with title");
+})
 
 
 // Read
-app.get('/todos',(req,res)=>{
+app.get('/todos', (req, res) => {
+    console.log('/todos with get as method called');
     res.status(200).send(DATA);
 })
 
@@ -43,6 +56,22 @@ app.get('/todos',(req,res)=>{
 
 
 // Delete
+app.delete('/todos', (req, res) => {
+
+    const _id = req.body.id;
+
+    const itemIndex = DATA.findIndex((item) => item.id == _id)
+
+    if (itemIndex != -1) {
+        DATA.splice(itemIndex, 1);
+        res.status(200).send("Item Deleted Sucessfully");
+    }
+    else {
+        res.status(500).send("Item Not Found");
+    }
+
+
+})
 
 
 
