@@ -52,7 +52,18 @@ app.get('/todos', (req, res) => {
 
 
 // Update
+app.put('/todos', (req, res) => {
+    const newData = req.body;
 
+    const dataIndex = DATA.findIndex((item) => item.id == newData.id);
+    if (dataIndex != -1) {
+        DATA[dataIndex] = { ...DATA[dataIndex], ...newData };
+        res.status(501).send('Updated Sucessfully');
+    }
+    else {
+        res.status(500).send('No Data exist to update');
+    }
+})
 
 
 // Delete
