@@ -18,7 +18,7 @@ Whole tutorial is divide in modules
 |S.No | Name | Description | Link | 
 |---| --- | --- | --- |
 | 1 |CN| Basic Networking |[Read](<CN/README.md>) |
-|2| Communication | Data Sending Strategies |[Read](<AAA Module 1/readme.md>) |
+|2 | Communication | Data Sending Strategies |[Read](<Communication/README.md>) |
 |3 | AAA | System Security |[Read](<AAA Module 1/readme.md>) |
 |4 | Speed | Performanse |[Read](<AAA Module 1/readme.md>) |
 |5 | TDD | Test driven devlopment |[Read](<AAA Module 1/readme.md>) |
