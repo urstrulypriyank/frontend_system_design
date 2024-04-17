@@ -66,7 +66,55 @@ useEffect(() =>
 - In Long Polling you request the data from the server and get the response if only there is some change in data.
 - It works on single long lived connection
 - connection is open untill you get new data /timeout
-- Cons: Large number of connection, more the load.
+- Cons: Large number of connection, more the load.(response time is large )
+
+```javascript
+async function getData(lastData) {
+  try {
+    const response = await fetch(`/getData?data=${lastData}`);
+    const data = await response.json();
+    document.getElementById("root").innerHTML = data.data;
+    getData(data.data);
+  } catch (error) {
+    console.log("some error occured " + error);
+    // please handle specific to timeout or long polling
+  }
+}
+getData();
+```
+
+Basic Server
+
+```JavaScript
+let data = 'initial Data';
+const clientWaitingList = [];
+
+app.get('/getData', (req, res) => {
+
+    // if the data doesnot match then send new data
+    if (data !== req.query.data)
+        res.json({ data });
+    else {
+        // else store the res object somewhere
+        // by default the request is in hold
+        clientWaitingList.push(res);
+
+    }
+});
+
+app.get('/updateData', (req, res) => {
+    data = req.query.data;
+    // whenever we get data update we send the response using that res obj.
+
+    while(clientWaitingList.length>0)
+    {
+        const client = clientWaitingList.pop();
+        client.json({data});
+    }
+    res.status(200).send({ data })
+})
+
+```
 
 ---
 
@@ -81,3 +129,4 @@ It provide full-duplex communication channel.
 This means that the client and server can send data to each other without having to make a separate request each time. Websockets are not as scalable as HTTP, but they are better suited for applications that require near ⌛ real-time communication.
 
 It is used where order of data does matters eg: chatApps
+
