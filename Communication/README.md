@@ -120,13 +120,12 @@ app.get('/updateData', (req, res) => {
 
 ### WEB SOCKETS
 
-Websockets are the way to create persistent connection, It is like establishing piepeline between the client and server.
+Websockets are the way to create persistent connection, It is like establishing piepeline between the client and server (tunelling).
 
-It is bi-directional, statefull protocol
+- It is continious, bi-directional, statefull protocol
 
-It provide full-duplex communication channel.
+- It provide full-duplex communication channel.
 
-This means that the client and server can send data to each other without having to make a separate request each time. Websockets are not as scalable as HTTP, but they are better suited for applications that require near ⌛ real-time communication.
+- This means that the client and server can send data to each other without having to make a separate request each time. Websockets are not as scalable as HTTP, but they are better suited for applications that require near ⌛ real-time communication.
 
-It is used where order of data does matters eg: chatApps
-
+- It is used where order of data does matters eg: chatApps
